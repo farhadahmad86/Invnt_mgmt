@@ -1,1 +1,1 @@
-# Invnt_mgmt
+## Laravel Inventory
