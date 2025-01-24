@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Browser Image and Heading -->
+    <link rel="shortcut icon" href="Resources/logo/logoIni.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+
+    <title>ASK Management Consultants</title>
+
+    <div id="loadOverlay"></div>
+
+  </head>
+
+  <link rel="stylesheet" href="Resources/animation.css" />
+
+  <style>
+    #loadOverlay {
+      background: #373637 url("Gif/preLoader5.gif");
+      position: sticky;
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2000;
+      background-repeat: no-repeat;
+      background-size: 15%;
+      background-position: center;
+    }
+    @media screen and (max-width: 600px) {
+      #loadOverlay {
+        background: #373637 url("Gif/preLoader5.gif");
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2000;
+        background-repeat: no-repeat;
+        background-size: 45%;
+        background-position: center;
+      }
+    }
+  </style>
+
+  <body>
+
+    <navTop>
+      <div class="tMenu">
+        <div>
+          <a href="/a_askBase"
+            ><img
+              class="logo"
+              src="Resources/logo/ASK.png"
+              alt="ASK Management Consultants"
+          /></a>
+        </div>
+         <input type="radio" name="slider" id="menu-btn" style="display: none" />
+        <input
+          type="radio"
+          name="slider"
+          id="close-btn"
+          style="display: none"
+        />
+
+        <ul class="navTop-links">
+          <label for="close-btn" class="btn close-btn">✖</label>
+          <li style="color: white"><a class="temp" href="/">Home</a></li>
+
+          <li>
+            <a href="#" class="desktop-item temp">Who We Are ⌵</a>
+            <input type="checkbox" id="showDropA" />
+            <label for="showDropA" class="mobile-item">Who We Are ⌵</label>
+            <ul class="dropDown-menu">
+              <hr style="height: 20px" />
+              <li><a href="/AboutUs">About Us</a></li>
+              <li><a href="#">Our Philosophy</a></li>
+              <li><a href="#">Management Profile</a></li>
+              <li><a href="#">Industry Specialisation</a></li>
+              <hr style="height: 20px" />
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="desktop-item temp"> Services ⌵</a>
+            <input type="checkbox" id="showMegaA" />
+            <label for="showMegaA" class="mobile-item">Services ⌵</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img
+                    src="Resources/card/AuditA.jpg"
+                    alt=""
+                    style="border-radius: 10px"
+                  />
+                </div>
+                <div class="row">
+                  <header>Audit & Assurance</header>
+                  <ul class="mega-links">
+                    <li><a href="citCalculator.html">UAE Tax Calculation</a></li>
+                    <li><a href="#">Due Diligence Auditing</a></li>
+                    <li><a href="#">Internal Audit</a></li>
+                    <li><a href="#">External Audit</a></li>
+                    <li><a href="#">Statutory Audit</a></li>
+                    <li><a href="#">Tax Audit</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <img
+                    src="Resources/card/AuditorA.jpg"
+                    alt=""
+                    style="border-radius: 10px"
+                  />
+                </div>
+                <div class="row">
+                  <header>Outsourcing</header>
+                  <ul class="mega-links">
+                    <li>
+                      <a href=""><span>🡆</span> Outsourcing</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li><a class="temp" href="#">Careers</a></li>
+
+          <li><a class="temp" href="#">Contact Us</a></li>
+
+          <li><a class="temp" href="#">Blog</a></li>
+
+          <li>
+            <a href="/login"
+              ><img
+                src="/static/JAVA/Images/Icon/menuA.png"
+                style="width: 22px"
+                class="Menu"
+                alt=""
+              />
+            </a>
+          </li>
+        </ul>
+        <label for="menu-btn" class="btn menu-btn"
+          ><img
+            src="/static/JAVA/Images/Icon/menu.jpg"
+            style="position: relative; top: 3px; right: 10px; z-index: 12"
+            width="30px"
+        /></label>
+      </div>
+    </navTop>
+    <p style="min-height: 45px"></p>
+
+     <script src="Resources/animation.js"></script>
+    <script>
+      AOS.init({
+        offset: 150,
+        duration: 800,
+      });
+    </script>
+  </body>
+
+  <style>
+    * {
+      font-family: "Roboto", "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+    }
+    navTop {
+      position: fixed;
+      z-index: 1000;
+      width: 100%;
+      background: rgb(255, 255, 255, 0.8);
+      backdrop-filter: blur(15px);
+      padding: 0vw 0vw;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    }
+    navTop .tMenu {
+      position: relative;
+      max-width: 1300px;
+      padding: 0vw 2vw;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+    }
+
+    .tMenu .logo {
+      padding-top: 5px;
+      height: 40px;
+      margin-left: 20px;
+    }
+
+    .temp {
+      color: #757e86;
+    }
+    .temp:hover {
+      color: #0ea2bd;
+    }
+
+    .tMenu .navTop-links {
+      display: inline-flex;
+    }
+    .navTop-links li {
+      list-style: none;
+    }
+    .navTop-links li a {
+       text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 15px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .navTop-links li a:hover {
+      color: #0ea2bd;
+    }
+    .navTop-links .mobile-item {
+      display: none;
+    }
+    .navTop-links .drop-menu,
+    .navTop-links .dropDown-menu {
+      position: absolute;
+      width: 250px;
+      line-height: 45px;
+      top: 65px;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 6px 10px rgba(92, 91, 91, 0.15);
+    }
+    .drop-menu a,
+    .dropDown-menu a {
+      font-size: 18px;
+      color: #eceeef;
+    }
+    .navTop-links li:hover .dropDown-menu {
+      transition: all 0.3s ease;
+      top: 45px;
+      opacity: 1;
+      visibility: visible;
+      background: #485664;
+    }
+    .navTop-links li:hover .mega-box {
+      transition: all 0.3s ease;
+      top: 45px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .drop-menu li a {
+      width: 100%;
+      display: block;
+      font-weight: 400;
+      border-radius: 0px;
+      font-size: 15px;
+      padding: 10px 20px 10px 35px;
+      line-height: 12px;
+    }
+    .dropDown-menu li a {
+      width: 90%;
+      margin-left: 10px;
+      display: block;
+      font-weight: 400;
+      border-radius: 0px;
+      font-size: 15px;
+      padding: 10px 20px 10px 35px;
+      line-height: 12px;
+      border-radius: 5px;
+    }
+
+    .mega-box {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 0 80px;
+      top: 85px;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .mega-box img {
+      width: 100%;
+      max-width: 200px;
+    }
+    .mega-box .content {
+      background: #485664;
+      padding: 25px 10px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    .mega-box .content .row {
+      width: calc(25% - 30px);
+      line-height: 30px;
+    }
+    .content .row img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .content .row header {
+      color: rgb(139, 219, 254);
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .content .row .mega-links {
+      margin-left: -40px;
+      border-left: 1px solid rgba(241, 239, 239);
+    }
+    .row .mega-links li {
+      padding: 0 0px 0 20px;
+    }
+    .row .mega-links li a {
+
+      padding: 0px;
+      color: rgb(250, 252, 252);
+      font-size: 15px;
+      display: block;
+      padding: 5px 10px 5px 20px;
+      line-height: 15px;
+      text-indent: -1.8em;
+    }
+    .row .mega-links li a span {
+      color: gold;
+    }
+    .row .mega-links li a:hover {
+      color: rgb(245, 249, 249);
+      background: #0ea2bd;
+    }
+
+    .dropDown-menu li a:hover {
+      color: rgb(245, 249, 249);
+      background: #0ea2bd;
+    }
+
+    .tMenu .btn {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+    }
+    .tMenu .btn.close-btn {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+
+    @media screen and (max-width: 970px) {
+      .tMenu .btn {
+        display: block;
+      }
+      .tMenu .navTop-links {
+        position: fixed;
+        height: 100vh;
+        width: 90%;
+        max-width: 330px;
+        top: 0;
+        left: -90%;
+        display: block;
+        padding: 50px 10px;
+        line-height: 30px;
+        overflow-y: auto;
+        box-shadow: 0px 15px 15px rgba(253, 253, 253, 0.18);
+        background: #373637 url("/static/JAVA/Images/Card/dotted.jpg");
+        background-position: center;
+        opacity: 0.95;
+        transition: all 0.3s ease;
+      }
+      .tMenu .logo {
+        width: 100px;
+        margin-left: 0px;
+      }
+      /* custom scroll bar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #242526;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3a3b3c;
+      }
+      #menu-btn:checked ~ .navTop-links {
+        left: 0%;
+      }
+      #menu-btn:checked ~ .btn.menu-btn {
+        display: none;
+      }
+      #close-btn:checked ~ .btn.menu-btn {
+        display: block;
+      }
+      .navTop-links li {
+        margin: 15px 10px;
+      }
+      .navTop-links li a {
+        padding: 0 0px;
+        display: block;
+        font-size: 17px;
+        color: #eceeef;
+      }
+
+      .navTop-links .drop-menu {
+        position: static;
+        opacity: 1;
+        top: 65px;
+        visibility: visible;
+        padding-left: 0px;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease;
+        background: #485664; 
+      }
+
+      .navTop-links .dropDown-menu {
+        position: static;
+        opacity: 1;
+        top: 65px;
+        visibility: visible;
+        padding-left: 0px;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease;
+        background: #485664; 
+      }
+
+      .navTop-links .drop-menu a {
+
+        color: #eceeef;
+      }
+
+      .navTop-links .dropDown-menu a {
+
+        color: #eceeef;
+        padding-left: 20px;
+      }
+
+      #showDropA:checked ~ .drop-menu,
+      #showDropB:checked ~ .drop-menu {
+
+        max-height: 100%;
+        color: #fa0707;
+      }
+
+      #showDropA:checked ~ .dropDown-menu,
+      #showDropB:checked ~ .dropDown-menu {
+
+        max-height: 100%;
+        color: #fa0707;
+      }
+
+      #showMegaA:checked ~ .mega-box,
+      #showMegaB:checked ~ .mega-box,
+      #showMegaC:checked ~ .mega-box,
+      #showMegaD:checked ~ .mega-box {
+        max-height: 100%;
+        padding: 0px;
+      }
+
+      .navTop-links .desktop-item {
+        display: none;
+      }
+      .navTop-links .mobile-item {
+
+        display: block;
+        color: #f2f2f2;
+        font-size: 17px;
+        font-weight: 500;
+        padding-left: 0px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .navTop-links .mobile-item:hover {
+        background: #3a3b3c;
+        color: rgb(242, 239, 239);
+      }
+      .drop-menu li,
+      .dropDown-menu li {
+        margin: 0;
+      }
+
+      .drop-menu li a,
+      .dropDown-menu li a {
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 10px 10px 10px 0px;
+        line-height: 12px;
+      }
+      .mega-box {
+        position: static;
+        top: 65px;
+        opacity: 1;
+        visibility: visible;
+        padding: 0 0px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .mega-box .content {
+        box-shadow: none;
+        flex-direction: column;
+        padding: 20px 20px 0 20px;
+      }
+      .mega-box .content .row {
+        width: 100%;
+        margin-bottom: 15px;
+        border-top: 1px solid rgba(226, 25, 25, 0.08);
+      }
+      .mega-box .content .row:nth-child(1),
+      .mega-box .content .row:nth-child(2) {
+        border-top: 0px;
+      }
+      .content .row .mega-links {
+        border-left: 0px;
+        padding-left: 15px;
+      }
+      .row .mega-links li {
+        margin: 0;
+      }
+      .row .mega-links li a {
+        text-indent: -1.2em;
+      }
+      .content .row header {
+        font-size: 19px;
+      }
+    }
+    navTop input {
+      display: none;
+    }
+
+  </style>
+
+  <script>
+    let mOpen = document.querySelector("#menu-btn");
+    let mClose = document.querySelector("#menu-close");
+    let sMenu = document.querySelector("navTop div ul");
+
+    mOpen.onclick = () => {
+      sMenu.style.right = "0px";
+    };
+  </script>
+
+
+  <style>
+    #loadOverlay {
+      display: none;
+    }
+  </style>
+
+</html>
+
+<section class="conA">
+  <div class="slider" style="text-align: center; overflow: hidden"></div>
+
+  <div class="banner1">
+    <img class="imgSlide" src="Resources/background/bgPic1.jpg" alt="" />
+
+    <div class="text-box">
+      <h1>Delivering Promises</h1>
+      <span
+        ><img
+          src="Resources/gif/graph6.gif"
+          alt="Moving Image"
+          class="animated-image"
+        />
+      </span>
+      <p>
+        Our core philosophy can be described in two words “Delivering Promises”.
+        <br />
+        We take a much larger and serious view of the promises we make. .
+      </p>
+    </div>
+  </div>
+
+  <div class="banner2">
+    <img class="imgSlide" src="Resources/background/bgPic2.jpg" alt="" />
+    <div class="text-box">
+      <h1>Delivering Promises</h1>
+      <span
+        ><img
+          src="Resources/gif/graph6.gif"
+          alt="Moving Image"
+          class="animated-image"
+        />
+      </span>
+      <p>
+        Our core philosophy can be described in two words “Delivering Promises”.
+        <br />
+        We take a much larger and serious view of the promises we make. .
+      </p>
+    </div>
+  </div>
+
+  <div class="banner3">
+    <img class="imgSlide" src="Resources/background/bgPic3.jpg" alt="" />
+    <div class="text-box">
+      <h1>Delivering Promises</h1>
+      <span
+        ><img
+          src="Resources/gif/graph6.gif"
+          alt="Moving Image"
+          class="animated-image"
+        />
+      </span>
+      <p>
+        Our core philosophy can be described in two words “Delivering Promises”.
+        <br />
+        We take a much larger and serious view of the promises we make. .
+      </p>
+    </div>
+  </div>
+
+  <div class="banner4">
+    <img class="imgSlide" src="Resources/background/bgPic4.jpg" alt="" />
+    <div class="text-box">
+      <h1>Delivering Promises</h1>
+      <span
+        ><img
+          src="Resources/gif/graph6.gif"
+          alt="Moving Image"
+          class="animated-image"
+        />
+      </span>
+      <p>
+        Our core philosophy can be described in two words “Delivering Promises”.
+        <br />
+        We take a much larger and serious view of the promises we make. .
+      </p>
+    </div>
+  </div>
+
+  <div class="bttn">
+    <a class="blue" href="#">Learn more</a>
+    <a class="yellow" data-modal="modal-one">Request For A Proposal</a>
+  </div>
+</section>
+
+<style>
+
+  .conA {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    background: #106467;
+  }
+
+  .conA h1 {
+    font-size: 50px;
+  }
+
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(to right, #106467, #0bb1a9);
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  .hero {
+    height: 80%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero img {
+    height: 120%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .headline {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    transform: translate(-15%, -80%);
+    font-size: 100px;
+    color: white;
+    z-index: 3;
+  }
+
+  .hero::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(21, 87, 113);
+    opacity: 0.3;
+  }
+
+  .animated {
+    transition: opacity 3s ease, transform 0.8s ease;
+    opacity: 1;
+  }
+
+
+  .bttn {
+    margin-top: 30px;
+    display: flex;
+    position: absolute;
+    bottom: 200px;
+    left: 100px;
+    z-index: 15;
+  }
+
+  .bttn a {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+    background-color: #fff;
+    font-weight: 400;
+    border-radius: 25px;
+    margin: 5px;
+    border: 2px solid rgb(254, 253, 253);
+  }
+
+  .bttn a.blue {
+    color: white;
+    background-color: #106467;
+    transition: 0.6s ease;
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  .bttn a.blue:hover {
+    color: #fff;
+    background-color: #0bb1a9;
+  }
+
+  .bttn a.yellow {
+    color: white;
+    background-color: #106467;
+    transition: 0.6s ease;
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  .bttn a.yellow:hover {
+    color: #fff;
+    background-color: #0bb1a9;
+  }
+
+  .banner1,
+  .banner2,
+  .banner3,
+  .banner4 {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .imgSlide {
+    width: 110%;
+    position: absolute;
+    filter: brightness(0.4);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoom-out 3s linear infinite;
+  }
+
+  @keyframes zoom-out {
+    100% {
+      width: 100%;
+    }
+  }
+
+  .text-box {
+    width: 600px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    color: #fff;
+  }
+
+  .text-box h1 {
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  .text-box p {
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 60px;
+    color: white;
+  }
+
+  .text-box span {
+    background: red;
+    height: 1px;
+    width: 100px;
+    position: absolute;
+    left: 0px;
+  }
+
+  .banner1 {
+    animation: slide1 12s linear infinite;
+  }
+
+  .banner2 {
+    animation: slide2 12s linear infinite;
+  }
+
+  .banner3 {
+    animation: slide3 12s linear infinite;
+  }
+
+  .banner4 {
+    animation: slide4 12s linear infinite;
+  }
+
+  @keyframes slide1 {
+    0% {
+      visibility: hidden;
+    }
+
+    25% {
+      visibility: visible;
+    }
+
+    50% {
+      visibility: hidden;
+    }
+
+    75% {
+      visibility: hidden;
+    }
+
+    100% {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes slide2 {
+    0% {
+      visibility: hidden;
+    }
+
+    25% {
+      visibility: hidden;
+    }
+
+    50% {
+      visibility: visible;
+    }
+
+    75% {
+      visibility: hidden;
+    }
+
+    100% {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes slide3 {
+    0% {
+      visibility: hidden;
+    }
+
+    25% {
+      visibility: hidden;
+    }
+
+    50% {
+      visibility: hidden;
+    }
+
+    75% {
+      visibility: visible;
+    }
+
+    100% {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes slide4 {
+    0% {
+      visibility: hidden;
+    }
+
+    25% {
+      visibility: hidden;
+    }
+
+    50% {
+      visibility: hidden;
+    }
+
+    75% {
+      visibility: hidden;
+    }
+
+    100% {
+      visibility: visible;
+    }
+  }
+
+  .animated-image {
+    position: absolute;
+    width: 100px;
+    right: 0px;
+    bottom: -25px;
+    animation: moveUpDown 4s infinite;
+    opacity: 0.7;
+    z-index: 10;
+  }
+
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(25px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 450px) {
+    .animated-image {
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .imgSlide {
+      width: 220%;
+      position: absolute;
+      filter: brightness(0.4);
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+    }
+
+    @keyframes zoom-out {
+      100% {
+        width: 200%;
+      }
+    }
+  }
+
+
+</style>
+
+<section class="conB">
+  <div class="logos">
+    <div class="logos-slide">
+      <img src="Resources/services/slide 1.jpg" />
+      <img src="Resources/services/slide 2.jpg" />
+      <img src="Resources/services/slide 3.jpg" />
+      <img src="Resources/services/slide 4.jpg" />
+      <img src="Resources/services/slide 5.jpg" />
+      <img src="Resources/services/slide 6.jpg" />
+    </div>
+  </div>
+</section>
+
+<style>
+
+  .conB {
+    position: relative;
+    min-height: 100px;
+    background: white;
+    top: 30px;
+    z-index: 10;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .logos {
+    overflow: hidden;
+    background: white;
+    white-space: nowrap;
+  }
+
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+
+  .logos-slide {
+    padding-top: 15px;
+    display: inline-block;
+    animation: 15s slide infinite linear;
+  }
+
+  .logos-slide img {
+    height: 60px;
+    margin: 0 40px;
+    cursor: pointer;
+  }
+
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    content: "";
+    z-index: 12;
+  }
+
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+
+
+</style>
+
+<script>
+  let copy = document.querySelector(".logos-slide").cloneNode(true);
+  document.querySelector(".logos").appendChild(copy);
+</script>
+
+
+<section class="conC">
+
+  <section class="Manage" data-aos="fade-left">
+    <h1>
+      <span style="color: #1b94b2">OPPORTUNITY ABOUNDS <br /></span>
+    </h1>
+
+    <div>
+      <img class="imgDot" src="Resources/background/Dotted BG.png" alt="" />
+    </div>
+
+    <div class="base">
+      <div class="boxA">
+        <br />
+        <p style="font-size: 18px">
+          <span
+            style="font-weight: bold; font-size: 18px; color: rgb(69, 69, 160)"
+          >
+            ASK Management Consultants
+          </span>
+          is a business consultancy and accounting firm located in Multan,
+          Pakistan. At ASK Management Consultants we primarily support other
+          businesses in finding the most cost-effective and strategically
+          coherent fit for their growth, by exploring the growing possibilities
+          offered by advancements in business thinking and technology. We
+          believe that embracing modern business thinking and technology are the
+          only constants …
+        </p>
+        <br />
+      </div>
+      <div class="boxB">
+        <img src="Resources/background/Img5.jpg" alt="" />
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <btn class="btnB" href="#">About Us</btn>
+      <btn class="btnB" href="#">Our Philosophy</btn>
+      <btn class="btnB" href="#">Management Profile</btn>
+      <btn class="btnB" href="#">Industry Specilisation</btn>
+    </div>
+  </section>
+
+</section>
+
+<style>
+  .conC {
+    position: relative;
+    min-height: 100vh;
+    background: white;
+    top: 30px;
+    z-index: 10;
+  }
+
+  .btnB {
+    font-size: 0.9rem;
+    padding: 6px 15px;
+    background-color: #fff;
+    font-weight: 400;
+    border-radius: 25px;
+    margin: 5px;
+    border: 2px solid rgb(254, 253, 253);
+    color: white;
+    background-color: #106467;
+    transition: 0.6s ease;
+  }
+
+  .btnB:hover {
+    color: #fff;
+    background-color: #0bb1a9;
+  }
+</style>
+
+<section class="conE">
+
+  <section class="Manage" data-aos="fade-right">
+    <img
+      class="imgDot"
+      src="Resources/background/background/Dotted BG.png"
+      alt=""
+    />
+    <h1>
+      <span style="color: #1b94b2">Managing Director's <br /></span> Message
+    </h1>
+
+    <div class="base">
+      <div class="boxA">
+        <p>
+          We are now living in the age of technology. What seemed to be a
+          thought few years ago is now a reality. Accounting has long been
+          considered as a highly confidential work performed under direct
+          supervision of business owners. The technology now helps retain the
+          confidentiality and control while releasing us for location
+          dependence. We can now hire professional accountants and let our work
+          be completed remotely with far better quality and at fraction of the
+          cost..
+        </p>
+        <br />
+
+        <a class="btnBlue" href="#">Read More</a>
+      </div>
+      <div class="boxB">
+        <img src="Resources/profile/Aamer.jpg" alt="" />
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<style>
+  .conE {
+    position: relative;
+    min-height: 100vh;
+    background: rgb(243, 241, 241);
+    z-index: 10;
+  }
+
+  .Manage {
+    position: relative;
+    padding: 3vw 4vw 0 4vw;
+    width: 100%;
+    text-align: center;
+  }
+
+  .Manage .imgDot {
+    position: absolute;
+    width: min(max(100px, 30vw), 250px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.6;
+  }
+
+  .Manage h1 {
+    margin: 15px 10px 0px 10px;
+    font-weight: 600;
+    color: #272934;
+    font-size: min(max(35px, 4vw), 40px);
+  }
+
+  .Manage h1 span {
+    font-weight: 600;
+    font-size: min(max(35px, 4vw), 40px);
+  }
+
+  .Manage .base {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+  }
+
+  .Manage .boxA {
+    position: relative;
+    padding: 1rem 2rem 0 2rem;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .Manage .boxA P {
+    font-size: min(max(18px, 4vw), 21px);
+    line-height: 30px;
+    color: #0c2095;
+  }
+
+  .Manage .boxB {
+    position: relative;
+    padding: 1rem 2rem 0 2rem;
+    align-content: center;
+  }
+
+  .Manage .boxB img {
+    width: min(max(400px, 120vw), 95%);
+    padding: 0 10px;
+  }
+ 
+
+  .btnBlue {
+    font-size: 1rem;
+    padding: 6px 25px;
+    background-color: #fff;
+    font-weight: 400;
+    border-radius: 25px;
+    margin: 5px;
+    border: 2px solid rgb(254, 253, 253);
+    color: white;
+    background-color: #106467;
+    transition: 0.6s ease;
+  }
+
+  .btnBlue:hover {
+    color: #fff;
+    background-color: #0bb1a9;
+  }
+</style>
+
+
+<section class="conD">
+  <h1>
+    <span style="color: #1b94b2">News and Updates <br /></span>
+  </h1>
+
+  <div>
+    <img class="imgDot" src="Resources/background/Dotted BG.png" alt="" />
+  </div>
+  <div class="wrapperA">
+    <i id="left" class="fa-solid fa-angle-left">🡠</i>
+    <ul class="carousel">
+      <li class="card">
+        <div class="img">
+          <img src="Resources/card/c1.jpg" alt="img" draggable="false" />
+        </div>
+        <h2>Situation Vacant</h2>
+        <span
+          >Construction Accountant <br />
+          cum Controller</span
+        >
+        <br />
+        <a class="btnBlue" href="#">Read More</a>
+      </li>
+      <li class="card">
+        <div class="img">
+          <img src="Resources/card/c2.jpg" alt="img" draggable="false" />
+        </div>
+        <h2>Situation Vacant</h2>
+        <span
+          >Trainee Accountant <br />
+          cum Auditor</span
+        >
+        <br /><br />
+        <a class="btnBlue" href="#">Read More</a>
+      </li>
+      <li class="card">
+        <div class="img">
+          <img src="Resources/card/c3.jpg" alt="img" draggable="false" />
+        </div>
+        <h2>IFRS 17</h2>
+        <span
+          >Please contact us to know <br />
+          how we can help further.</span
+        >
+        <br /><br />
+        <a class="btnBlue" href="#">Read More</a>
+      </li>
+      <li class="card">
+        <div class="img">
+          <img src="Resources/card/c4.jpg" alt="img" draggable="false" />
+        </div>
+        <h2>IAS 36</h2>
+        <span
+          >Impairment Testing <br />
+          Please contact us to know
+        </span>
+        <br /><br />
+        <a class="btnBlue" href="#">Read More</a>
+      </li>
+      <li class="card">
+        <div class="img">
+          <img src="Resources/card/c5.jpg" alt="img" draggable="false" />
+        </div>
+        <h2>Situation Vacant</h2>
+        <span
+          >Impairment Testing <br />
+          Please contact us to know
+        </span>
+        <br /><br />
+        <a class="btnBlue" href="#">Read More</a>
+      </li>
+      <li class="card">
+        <div class="img">
+          <img src="Resources/card/c6.jpg" alt="img" draggable="false" />
+        </div>
+        <h2>IAS 36</h2>
+        <span
+          >Impairment Testing <br />
+          Please contact us to know
+        </span>
+        <br /><br />
+        <a class="btnBlue" href="#">Read More</a>
+      </li>
+    </ul>
+    <i id="right" class="fa-solid fa-angle-right">🡢</i>
+  </div>
+</section>
+
+<style>
+  .conD {
+    position: relative;
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+    z-index: 10;
+    padding: 40px 0px 20px 0px;
+  }
+  .conD .Manage {
+    position: relative;
+    padding: 3vw 4vw 0 4vw;
+    width: 100%;
+    text-align: center;
+  }
+
+  .conD .imgDot {
+    position: absolute;
+    width: min(max(100px, 30vw), 250px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.6;
+  }
+
+  .conD h1 {
+    margin: 5px 10px 0px 10px;
+    font-weight: 600;
+    color: #272934;
+    font-size: min(max(35px, 4vw), 40px);
+    text-align: center;
+  }
+
+  .conD h1 span {
+    font-weight: 600;
+    font-size: min(max(35px, 4vw), 40px);
+  }
+
+  .wrapperA {
+    margin: 20px 50px;
+    max-width: 93%;
+    width: 100%;
+    position: relative;
+  }
+  .wrapperA i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapperA i:active {
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapperA i:first-child {
+    left: -22px;
+    z-index: 100;
+  }
+  .wrapperA i:last-child {
+    right: -22px;
+  }
+  .wrapperA .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 220px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  .card {
+    background: #dedddd;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin: 10px;
+    min-height: 400px;
+    min-width: 350px;
+    text-align: center;
+  }
+  .card .img img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 4px solid #fff;
+  }
+  .carousel .card h2 {
+    font-weight: 500;
+    font-size: 1.36rem;
+    margin: 10px 0 5px;
+  }
+  .carousel .card span {
+    color: #6a6d78;
+    font-size: 1.11rem;
+  }
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
+</style>
+
+<script>
+  const wrapper = document.querySelector(".wrapperA");
+  const carousel = document.querySelector(".carousel");
+  const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+  const arrowBtns = document.querySelectorAll(".wrapperA i");
+  const carouselChildrens = [...carousel.children];
+  let isDragging = false,
+    isAutoPlay = true,
+    startX,
+    startScrollLeft,
+    timeoutId;
+
+  let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+  carouselChildrens
+    .slice(-cardPerView)
+    .reverse()
+    .forEach((card) => {
+      carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
+
+  carouselChildrens.slice(0, cardPerView).forEach((card) => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+  });
+
+  carousel.classList.add("no-transition");
+  carousel.scrollLeft = carousel.offsetWidth;
+  carousel.classList.remove("no-transition");
+
+  arrowBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      carousel.scrollLeft +=
+        btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+  });
+  const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+  };
+  const dragging = (e) => {
+    if (!isDragging) return; 
+
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+  };
+  const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+  };
+  const infiniteScroll = () => {
+
+    if (carousel.scrollLeft === 0) {
+      carousel.classList.add("no-transition");
+      carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+      carousel.classList.remove("no-transition");
+    }
+
+    else if (
+      Math.ceil(carousel.scrollLeft) ===
+      carousel.scrollWidth - carousel.offsetWidth
+    ) {
+      carousel.classList.add("no-transition");
+      carousel.scrollLeft = carousel.offsetWidth;
+      carousel.classList.remove("no-transition");
+    }
+
+    clearTimeout(timeoutId);
+    if (!wrapper.matches(":hover")) autoPlay();
+  };
+  const autoPlay = () => {
+    if (window.innerWidth < 800 || !isAutoPlay) return;
+    timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500);
+  };
+  autoPlay();
+  carousel.addEventListener("mousedown", dragStart);
+  carousel.addEventListener("mousemove", dragging);
+  document.addEventListener("mouseup", dragStop);
+  carousel.addEventListener("scroll", infiniteScroll);
+  wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+  wrapper.addEventListener("mouseleave", autoPlay);
+</script>
+
+
+<section class="conF">
+  <div class="logos2">
+    <div class="logos2-slide">
+      <img src="Resources/partners/R-2.png" />
+      <img src="Resources/partners/R-3.png" />
+      <img src="Resources/partners/R-4.png" />
+      <img src="Resources/partners/images.png" />
+      <img src="Resources/partners/CFE-Logo.jpg" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .conF {
+    position: relative;
+    min-height: 200px;
+    background: white;
+    top: 30px;
+    z-index: 10;
+  }
+
+  .logos2 {
+    overflow: hidden;
+    background: white;
+    white-space: nowrap;
+  }
+
+  .logos2:hover .logos2-slide {
+    animation-play-state: paused;
+  }
+
+  .logos2-slide {
+    padding-top: 15px;
+    display: inline-block;
+    animation: 15s slide infinite linear;
+  }
+
+  .logos2-slide img {
+    height: 120px;
+    margin: 0 40px;
+    cursor: pointer;
+  }
+
+  .logos2:before,
+  .logos2:after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    content: "";
+    z-index: 12;
+  }
+
+  .logos2:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos2:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+</style>
+
+<script>
+  let copy2 = document.querySelector(".logos2-slide").cloneNode(true);
+  document.querySelector(".logos2").appendChild(copy2);
+</script>
+
+<style>
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+
+
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".slider");
+
+
+    slider.style.transform = "translateY(-100%)";
+
+    requestAnimationFrame(function () {
+
+
+      slider.style.transform = "translateY(100%)";
+
+
+      [slider].forEach((element) => {
+        element.classList.add("animated");
+      });
+    });
+  });
+</script>
+
+<footer>
+  <div class="footer-col">
+    <h3>Quick Links</h3>
+    <li><a href="/">➧ Home </a></li>
+    <li><a href="/">➧ Services</a></li>
+    <li><a href="/">➧ Careers</a></li>
+    <li><a href="/">➧ Contact Us </a></li>
+  </div>
+
+  <div class="footer-col">
+    <h3>Services</h3>
+    <li>C2C Business Marketing</li>
+    <li>Outsourcing</li>
+    <li>Forensic Investigation Services</li>
+    <li>Advisory</li>
+    <li>Audit and Assurance</li>
+    <li>Taxation</li>
+    <li>Training</li>
+  </div>
+
+  <div class="footer-col">
+    <h3>Newsletter</h3>
+    <p>You can trust us. We only send promo offers,</p>
+    <div class="subscribe">
+      <input
+        type="text"
+        name="email"
+        placeholder="Your Emil Address"
+        autocomplete="on"
+      />
+      <a href="#" class="yellow">SUBSCRIBE</a>
+    </div>
+
+    <br /><br />
+    <div class="copyright">
+      <div>
+        <img
+          class="logo"
+          src="Resources/logo/ASK.png"
+          width="150"
+          alt="Ask-Management-Consultants"
+        />
+        <a href="#"
+          ><img
+            src="{% static 'JAVA/Images/Temp/facebook.png' %}"
+            class="icons"
+            alt=""
+        /></a>
+        <a href="#"
+          ><img
+            src="{% static 'JAVA/Images/Temp/linkedin.png' %}"
+            class="icons"
+            alt=""
+        /></a>
+        <a href="#"
+          ><img
+            src="{% static 'JAVA/Images/Temp/instagram.png' %}"
+            class="icons"
+            alt=""
+        /></a>
+      </div>
+    </div>
+    <div><p>© 2023 Ask-Management-Consultants. All rights reserved.</p></div>
+  </div>
+</footer>
+
+
+<style>
+
+  footer {
+    padding: 8vw 8vw 5vw 8vw;
+    background: rgba(71, 85, 105, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  footer .footer-col {
+    padding-bottom: 0px;
+  }
+  footer h3 {
+    color: rgb(241, 240, 245);
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+  footer li,
+  footer li a,
+  footer p {
+    list-style: none;
+    color: rgb(221, 227, 229);
+    padding: 7px 0;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  footer li a:hover,
+  footer li:hover {
+    color: rgb(241, 240, 245);
+  }
+  footer .subscribe {
+    margin: auto;
+  }
+  footer input {
+    width: 200px;
+    padding: 14px 12px;
+    background: #e3e5e9;
+    border: none;
+    outline: none;
+    color: #fff;
+  }
+  footer .subscribe a {
+    font-size: 0.9rem;
+    padding: 13px 10px;
+    background-color: #334f6c;
+    font-weight: 600;
+  }
+  footer .subscribe a.yellow {
+    color: #101c32;
+    background: rgb(25, 156, 196);
+    transition: 0.3s ease;
+  }
+  footer .subscribe a.yellow:hover {
+    color: rgb(21, 21, 100);
+    background: #fff;
+  }
+  footer .copyright {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  footer .copyright p {
+    font-size: 1rem;
+  }
+  footer .copyright .icons {
+    width: 25px;
+  }
+  footer .copyright .icons:hover {
+    border: 2px solid rgb(215, 215, 216);
+    border-radius: 30px;
+  }
+</style>

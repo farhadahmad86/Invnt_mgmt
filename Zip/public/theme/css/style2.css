@@ -1,0 +1,24 @@
+.quixnav .metismenu a{
+    padding:0.125rem 1.25rem;
+}
+body{
+   min-height:100vh;
+   line-height: 1.6 !important;
+}
+tr{
+    line-height: 0.5;
+}
+table.dataTable tbody td {
+    padding: 10px 12px !important;
+}
+.table-responsive-sm {
+    min-width: 26.5rem !important;
+}
+.content-body{
+    min-height: 92vh !important;
+}
+/*.table-responsive {*/
+/*    overflow-y: scroll;*/
+/*    overflow-x: hidden;*/
+/*    height: 256px;*/
+/*}*/

@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="dist/jquery.floatThead.js"></script>
+    </head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <td>Sum</td>
+        <td>$180</td>
+    </tr>
+    </tfoot>
+    <tbody>
+    <tr>
+        <td>January</td>
+        <td>$100</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr><tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script>
+    $('table').floatThead({
+    scrollContainer: function($table){
+    return $table.closest('.tableContainer');
+    }
+    });
+    $('table').floatThead({
+
+        // thead cells
+        headerCellSelector: 'tr:visible:first>*:visible',
+
+        // zindex of the floating thead (actually a container div)
+        zIndex: 1001,
+
+        // 'fixed', 'absolute', 'auto'. auto picks the best for your table scrolling type.
+        position: 'auto',
+
+        // offset from top of window where the header should not pass above
+        top: 0,
+
+        // offset from the bottom of the table where the header should stop scrolling
+        bottom: 0,
+
+        // or boolean 'true' (use offsetParent) | function -> if the table has horizontal scroll bars then this is the container that has overflow:auto and causes those scroll bars
+        scrollContainer: function($table) {
+            return $([]);
+        },
+
+        // only valid if scrollContainer is not used (ie window scrolling). this is the container which will control y scrolling at some mobile breakpoints
+        responsiveContainer: function($table) {
+            return $([]);
+        },
+
+        // this is only called when using IE,
+        // override it if the first row of the table is going to contain colgroups (any cell spans greater than one col)
+        // it should return a jquery object containing a wrapped set of table cells comprising a row that contains no col spans and is visible
+        getSizingRow: function($table, $cols, $fthCells){
+            return $table.find('tbody tr:visible:first>*:visible');
+        },
+
+        // default CSS classes
+        floatTableClass: 'floatThead-table',
+        floatWrapperClass: 'floatThead-wrapper',
+        floatContainerClass: 'floatThead-container',
+
+        // copy 'class' attribute from table into the floated table so that the styles match.
+        copyTableClass: true,
+
+        // use MutationObserver api to reflow automatically when internal table DOM changes
+        autoReflow: false,
+
+        // debug mode
+        debug: false,
+
+        // should we bind events that expect these frameworks to be present and/or check for them?
+        support: {
+            bootstrap: true,
+            datatables: true,
+            jqueryUI: true,
+            perfect<a href="https://www.jqueryscript.net/tags.php?/Scroll/">Scroll</a>bar: true
+    }
+
+    });
+</script>
+</html>
