@@ -88,12 +88,14 @@ class SaleInvoiceForJobsController extends Controller
         // $query = $query->get();
         // dd($query);
         // Apply pagination
-        $query = $query->orderBy('sifj_id', 'DESC')->paginate($pagination_number);
+
         if ($request->pdf_download == '1') {
+            $query = $query->orderBy('sifj_id', 'DESC')->get();
             $pdf = PDF::loadView($prnt_page_dir, compact('job', 'from_date', 'to_date', 'query', 'invoice', 'remaining_balance', 'totalSum'));
             $pdf->setPaper('A4', 'Landscape');
             return $pdf->stream($pge_title . '_x.pdf');
         } else {
+            $query = $query->orderBy('sifj_id', 'DESC')->paginate($pagination_number);
             return view('sale_invoice/sale_invoice_for_jobs_list', compact('job', 'from_date', 'to_date', 'query', 'invoice', 'remaining_balance', 'totalSum'))->with('pageTitle', 'Sale Invoice For Jobs List');
         }
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ClientModel;
 use App\Models\JobCloseModel;
 use Carbon\Carbon;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -29,14 +30,18 @@ class EditClientController extends Controller
     public function index(Request $request)
     {
         $auth = Auth::user();
-        $client_name = $request->client_name;
         $ar = json_decode($request->array);
+        $client_name = (!isset($request->client_name) && empty($request->client_name)) ? ((!empty($ar)) ? $ar[1]->{'value'} : '') : $request->client_name;
+//        $client_name = $request->client_name;
         $datas = ClientModel::all();
         $datas = DB::table('client')
             ->leftJoin('users', 'users.id','=', 'client.cli_user_id')
             ->where('client.company_id', $auth->company_id)
             ->orderBy('cli_id','Desc');
-            $pagination_number = empty($ar) ? 30 : 100000000;
+        $srch_fltr = [];
+        array_push($srch_fltr, $client_name);
+//        dd($ar);
+            $pagination_number = (empty($ar)) ? 30 : 100000000;
         $query = $datas;
 
         if (isset($request->client_name)) {
@@ -47,10 +52,18 @@ class EditClientController extends Controller
         }
         $client_title = DB::table('client')
         ->leftJoin('users', 'users.id','=', 'client.cli_user_id')->get();
+        $prnt_page_dir = 'modal_views.client_report';
+        $pge_title = 'Client Report';
         // $query = $query->get();
-        $query = $query->orderBy('cli_id', 'DESC')->paginate($pagination_number);
-
-        return view('edit_client/edit_client_list', compact('client_name','client_title', 'query'))->with('pageTitle', 'Client List');
+        if ($request->pdf_download == '1') {
+            $query = $query->orderBy('cli_id', 'DESC')->get();
+            $pdf = PDF::loadView($prnt_page_dir, compact('client_name','client_title', 'query','srch_fltr'));
+            $pdf->setPaper('A4', 'Landscape');
+            return $pdf->stream($pge_title . '_x.pdf');
+        } else {
+            $query = $query->orderBy('cli_id', 'DESC')->paginate($pagination_number);
+            return view('edit_client/edit_client_list', compact('client_name','client_title', 'query'))->with('pageTitle', 'Client List');
+        }
 
     }
 

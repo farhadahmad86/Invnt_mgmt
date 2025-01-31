@@ -36,8 +36,8 @@
                     </ol>
                 </div>
             </div>
-        @include('inc._message')
-        <!-- row -->
+            @include('inc._message')
+            <!-- row -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
@@ -65,43 +65,37 @@
                                                     <button type="submit" class="btn btn-primary">Save</button>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="form-group row">
-
                                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                                     <div class="form-group">
-
-
-
-
-
                                                         <ul>
-                                                            {{--                                                    <strong style="color: #0b5ed7"> <input type="checkbox" name="checkedAll" id="checkedAll"/>--}}
-                                                            {{--                                                        Check All </strong>--}}
-                                                            {{--                                                    <br/>--}}
-
                                                             @php $counter = 0; @endphp
                                                             @foreach($permission as $value)
-
-                                                                <li onclick="display_li({{$counter}})"><input type="checkbox" id="main_li[{{$counter}}]"
-                                                                           class="name checkSingle" name="permission[]" value="{{ $value->id }}" {{ in_array($value->id, $rolePermissions) ? "checked" : false}}
-                                                                           > {{ $value->name }}
-
+                                                                <li>
+                                                                    <input type="checkbox" id="main_li[{{$counter}}]"
+                                                                           class="name checkSingle" name="permission[]" value="{{ $value->id }}"
+                                                                           {{ in_array($value->id, $rolePermissions) ? "checked" : false}} >
+                                                                    <span onclick="display_li({{$counter}})" style="cursor: pointer">{{ $value->name }}</span>
                                                                     <div id="li-div[{{$counter}}]" style="display: none">
                                                                         <ul>
                                                                             @foreach($permissions as $values)
                                                                                 @if($value->code==$values->parent)
-
-                                                                                    <li><input type="checkbox" value="{{ $values->id }}" {{ in_array($values->id, $rolePermissions) ? "checked" : false}}
-                                                                                        class="name checkSingle" name="permission[]"> {{ $values->name }}
+                                                                                    <li>
+                                                                                        <input type="checkbox" value="{{ $values->id }}"
+                                                                                               {{ in_array($values->id, $rolePermissions) ? "checked" : false}}
+                                                                                               class="name checkSingle" name="permission[]">
+                                                                                        {{ $values->name }}
                                                                                         <ul>
                                                                                             @foreach($permissionss as $valuess)
                                                                                                 @if($values->code==$valuess->parent)
-
-                                                                                                    <li><input type="checkbox" value="{{ $valuess->id }}" {{ in_array($valuess->id, $rolePermissions) ? "checked" : false}}
-                                                                                                        class="name checkSingle" name="permission[]"> {{ $valuess->name }}</li>
+                                                                                                    <li>
+                                                                                                        <input type="checkbox" value="{{ $valuess->id }}"
+                                                                                                               {{ in_array($valuess->id, $rolePermissions) ? "checked" : false}}
+                                                                                                               class="name checkSingle" name="permission[]">
+                                                                                                        {{ $valuess->name }}
+                                                                                                    </li>
                                                                                                 @endif
                                                                                             @endforeach
                                                                                         </ul>
@@ -110,33 +104,23 @@
                                                                             @endforeach
                                                                         </ul>
                                                                     </div>
-
                                                                 </li>
                                                                 @php $counter++; @endphp
                                                             @endforeach
                                                         </ul>
-
-
-
                                                     </div>
                                                 </div>
-
-
-
-
                                             </div>
-
-
                                         </div>
-
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
+
         </div>
     </div>
     <!--**********************************
@@ -144,7 +128,6 @@
     ***********************************-->
 @endsection
 @section('script')
-
 
     <script>
         $('input[type="checkbox"]').change(function (e) {
@@ -193,13 +176,14 @@
         function display_li(id) {
             let display = document.getElementById("li-div[" + id + "]").style.display;
             console.log(display);
-            if (display == "none") {
+            if (display === "none") {
                 document.getElementById("li-div[" + id + "]").style.display = "block";
             } else {
                 document.getElementById("li-div[" + id + "]").style.display = "none";
             }
-
         }
+
+
 
         function maincheckForm() {
 
@@ -230,6 +214,7 @@
                 return false;
             }
         }
+
         function validateInventoryInputs(InputIdArray) {
             let i = 0,
                 flag = false,
@@ -251,6 +236,7 @@
             }
             return flag;
         }
+
         $(document).ready(function () {
             // $('#form').validate({ // initialize the plugin
             //
